@@ -23,7 +23,7 @@ jobs:
       run: javac TicTacToe.java && jar cfe TicTacToe.jar TicTacToe TicTacToe.class
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: tictactoe-jar
         path: TicTacToe.jar
