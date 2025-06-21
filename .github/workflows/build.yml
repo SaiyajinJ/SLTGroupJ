@@ -1,0 +1,36 @@
+name: Build and Deploy TicTacToe
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code auschecken
+        uses: actions/checkout@v3
+
+      - name: Java 17 installieren
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Java kompilieren
+        run: |
+          mkdir -p out
+          javac -d out TicTacToe.java
+
+      - name: Ausführbare JAR erstellen
+        run: |
+          cd out
+          jar cfe ../app.jar TicTacToe .
+
+      - name: JAR als Artefakt hochladen
+        uses: actions/upload-artifact@v3
+        with:
+          name: TicTacToe-jar
+          path: app.jar
