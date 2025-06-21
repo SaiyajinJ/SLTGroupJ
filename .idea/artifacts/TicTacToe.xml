@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TicTacToe">
+    <output-path>$PROJECT_DIR$/out/artifacts/TicTacToe</output-path>
+    <root id="archive" name="SLTGroupJ.jar">
+      <element id="module-output" name="SLTGroupJ" />
+    </root>
+  </artifact>
+</component>
